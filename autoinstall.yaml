@@ -4,7 +4,7 @@ autoinstall:
   identity:
     hostname: LT-Ubuntu
     username: tophe
-    password: "a"
+    password: "$6$RNbE8/3eEK6w1HfA$2WI9JAA/H0yblZR2cNgvzwJUEhK1vr3iu9DL8yFeOt9KdM9u88I26D2exY4vl9UwmCBQtvsLD9MywxiHdMU66/"
 
   locale: fr_FR
   keyboard:
