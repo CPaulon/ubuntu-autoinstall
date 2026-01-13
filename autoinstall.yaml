@@ -349,6 +349,18 @@ autoinstall:
 
     - curtin in-target --target=/target -- apt update
     - curtin in-target --target=/target -- apt install -y anydesk
+    
+  late-commands:
+    # ---- INSTALL PACKET TRACER 9 ----
+    - curtin in-target --target=/target -- mkdir -p /tmp/debs
+
+    - curtin in-target --target=/target -- wget -O /tmp/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb \
+      "https://github.com/CPaulon/ubuntu-autoinstall/releases/download/PacketTracer9/CiscoPacketTracer_900_Ubuntu_64bit.deb"
+
+    - curtin in-target --target=/target -- dpkg -i /tmp/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb || true
+    - curtin in-target --target=/target -- apt -f install -y
+
+    
 
 
 
