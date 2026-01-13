@@ -17,3 +17,310 @@ autoinstall:
   storage:
     layout:
       name: direct
+
+  packages:
+    - 2to3
+    - alsa-base
+    - alsa-utils
+    - anacron
+    - apport-gtk
+    - appstream
+    - apt-config-icons-hidpi
+    - apt-transport-https
+    - at-spi2-core
+    - autoconf
+    - automake
+    - avahi-daemon
+    - baobab
+    - bc
+    - bluez
+    - bluez-cups
+    - brltty
+    - bsdutils
+    - bzip2
+    - ca-certificates
+    - cloud-init
+    - cups
+    - cups-bsd
+    - cups-client
+    - cups-filters
+    - curl
+    - dash
+    - diffutils
+    - dirmngr
+    - dmz-cursor-theme
+    - efibootmgr
+    - eog
+    - eshare
+    - eve-ng-integration
+    - evince
+    - ffmpeg
+    - filezilla
+    - findutils
+    - firefox
+    - fontconfig
+    - fonts-dejavu-core
+    - fonts-liberation
+    - fonts-noto-cjk
+    - fonts-noto-color-emoji
+    - fonts-noto-core
+    - fonts-ubuntu
+    - foomatic-db-compressed-ppds
+    - freeradius
+    - fwupd
+    - fwupd-signed
+    - gamemode
+    - gawk
+    - gdm3
+    - ghostscript
+    - gir1.2-gmenu-3.0
+    - git
+    - gnome-accessibility-themes
+    - gnome-bluetooth-sendto
+    - gnome-calculator
+    - gnome-characters
+    - gnome-clocks
+    - gnome-control-center
+    - gnome-disk-utility
+    - gnome-font-viewer
+    - gnome-initial-setup
+    - gnome-keyring
+    - gnome-logs
+    - gnome-menus
+    - gnome-power-manager
+    - gnome-session
+    - gnome-session-canberra
+    - gnome-settings-daemon
+    - gnome-shell
+    - gnome-shell-extension-appindicator
+    - gnome-shell-extension-ubuntu-dock
+    - gnome-shell-extension-ubuntu-tiling-assistant
+    - gnome-system-monitor
+    - gnome-terminal
+    - gnome-text-editor
+    - gnome-tweaks
+    - gnome-user-docs-fr
+    - gns3-gui
+    - gns3-server
+    - gnupg2
+    - gnutls-bin
+    - gparted
+    - gperf
+    - gpg-agent
+    - grep
+    - grub-efi-amd64
+    - grub-efi-amd64-signed
+    - gsettings-ubuntu-schemas
+    - gss-ntlmssp
+    - gstreamer1.0-alsa
+    - gstreamer1.0-packagekit
+    - gstreamer1.0-plugins-base-apps
+    - gzip
+    - haproxy
+    - hostname
+    - hplip
+    - hunspell-fr
+    - ibus
+    - ibus-gtk
+    - ibus-gtk3
+    - ibus-table
+    - ibus-table-cangjie-big
+    - ibus-table-cangjie3
+    - ibus-table-cangjie5
+    - im-config
+    - init
+    - inputattach
+    - ipcalc
+    - iproute2
+    - ipscan
+    - iputils-ping
+    - kdenlive
+    - kerneloops
+    - ksnip
+    - landscape-client
+    - language-pack-fr
+    - language-pack-fr-base
+    - language-pack-gnome-fr
+    - language-pack-gnome-fr-base
+    - language-selector-common
+    - language-selector-gnome
+    - laptop-detect
+    - lcov
+    - libatk-adaptor
+    - libbz2-1.0
+    - libbz2-dev
+    - libcanberra-gtk-module
+    - libchewing3
+    - libchewing3-data
+    - libcjose-dev
+    - libcurl4-gnutls-dev
+    - libegl1-mesa
+    - libev-dev
+    - libgl1
+    - libgl1-mesa-glx
+    - libglib2.0-bin
+    - libglx-mesa0
+    - libgnutls28-dev
+    - libgtk2.0-0t64
+    - libhttp-parser-dev
+    - libjansson-dev
+    - libkrb5-dev
+    - liblz4-dev
+    - libm17n-0
+    - libmarisa0
+    - libnl-route-3-dev
+    - libnotify-bin
+    - libnss-mdns
+    - libnss-wrapper
+    - libopencc-data
+    - libopencc1.1
+    - libotf1
+    - libpam-fprintd
+    - libpam-gnome-keyring
+    - libpam-sss
+    - libpam-wrapper
+    - libpam0g-dev
+    - libpinyin-data
+    - libpinyin15
+    - libprotobuf-c-dev
+    - libproxy1-plugin-gsettings
+    - libproxy1-plugin-networkmanager
+    - libqt5core5t64
+    - libradcli-dev
+    - libreadline-dev
+    - libreoffice
+    - libsasl2-modules
+    - libseccomp-dev
+    - libsocket-wrapper
+    - libspa-0.2-bluetooth
+    - libtalloc-dev
+    - libu2f-udev
+    - libuid-wrapper
+    - libwmf0.2-7-gtk
+    - libx11-xcb1
+    - libxcb-randr0
+    - libxcb-xfixes0
+    - libxcb1
+    - libxrandr2
+    - libxtst6
+    - login
+    - lsb-release
+    - m17n-db
+    - memtest86+
+    - mesa-utils
+    - minicom
+    - mousetweaks
+    - nano
+    - nautilus-sendto
+    - ncurses-base
+    - ncurses-bin
+    - net-tools
+    - network-manager
+    - network-manager-config-connectivity-ubuntu
+    - network-manager-openvpn
+    - network-manager-openvpn-gnome
+    - network-manager-pptp-gnome
+    - nuttcp
+    - obs-studio
+    - ocserv
+    - okular
+    - openprinting-ppds
+    - openssh-server
+    - openvpn
+    - orca
+    - packagekit
+    - pcmciautils
+    - peek
+    - pipewire-pulse
+    - plymouth-theme-spinner
+    - policykit-desktop-privileges
+    - printer-driver-brlaser
+    - printer-driver-c2esp
+    - printer-driver-foo2zjs
+    - printer-driver-m2300w
+    - printer-driver-min12xxw
+    - printer-driver-pnm2ppa
+    - printer-driver-ptouch
+    - printer-driver-pxljr
+    - printer-driver-sag-gdi
+    - printer-driver-splix
+    - protobuf-c-compiler
+    - pulseaudio
+    - putty
+    - python-is-python3
+    - remmina
+    - rfkill
+    - screen
+    - seahorse
+    - shim-signed
+    - snapd
+    - software-properties-common
+    - software-properties-gtk
+    - speech-dispatcher
+    - spice-vdagent
+    - stress
+    - tcpdump
+    - traceroute
+    - ubuntu-docs
+    - ubuntu-drivers-common
+    - ubuntu-gnome-desktop
+    - ubuntu-keyring
+    - ubuntu-minimal
+    - ubuntu-release-upgrader-gtk
+    - ubuntu-report
+    - ubuntu-restricted-addons
+    - ubuntu-settings
+    - ubuntu-standard
+    - ubuntu-wallpapers
+    - udev
+    - unzip
+    - update-manager
+    - update-notifier
+    - virt-viewer
+    - wfrench
+    - wget
+    - whoopsie
+    - wireless-tools
+    - wireplumber
+    - wpasupplicant
+    - xcursor-themes
+    - xdg-user-dirs
+    - xdg-user-dirs-gtk
+    - xdg-utils
+    - xkb-data
+    - xorg
+    - yajl-tools
+    - yaru-theme-gnome-shell
+    - yaru-theme-gtk
+    - yaru-theme-icon
+    - yaru-theme-sound
+    - yelp
+    - zenity
+    - zenmap
+    - zip
+
+    # Paquets TIERS (à installer à l’étape 6 après ajout des dépôts/clefs)
+    # - anydesk
+    # - google-chrome-stable
+    # - master-pdf-editor-5
+    # - novoconnect-software
+    # - onlyoffice-desktopeditors
+    # - opera-stable
+    # - packettracer
+    # - sublime-text
+    # - synology-drive
+    # - tailscale
+    # - tailscale-archive-keyring
+    # - virtualbox-7.1
+    # - webex
+
+
+
+
+
+
+
+
+
+
+
