@@ -1,0 +1,19 @@
+autoinstall:
+  version: 1
+
+  identity:
+    hostname: LT-Ubuntu
+    username: tophe
+    password: "a"
+
+  locale: fr_FR
+  keyboard:
+    layout: fr
+
+  ssh:
+    install-server: true
+    allow-pw: true
+
+  storage:
+    layout:
+      name: direct
