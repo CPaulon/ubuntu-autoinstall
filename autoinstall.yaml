@@ -299,65 +299,31 @@ autoinstall:
     - zenmap
     - zip
 
-    # Paquets TIERS (à installer à l’étape 6 après ajout des dépôts/clefs)
-    # - anydesk
-    # - google-chrome-stable
-    # - master-pdf-editor-5
-    # - novoconnect-software
-    # - onlyoffice-desktopeditors
-    # - opera-stable
-    # - packettracer
-    # - sublime-text
-    # - synology-drive
-    # - tailscale
-    # - tailscale-archive-keyring
-    # - virtualbox-7.1
-    # - webex
-
+  late-commands:
+    # Pré-requis pour dépôts/clefs
+    - curtin in-target --target=/target -- apt update
+    - curtin in-target --target=/target -- apt install -y wget curl gnupg ca-certificates
 
     # Google Chrome
-    - curtin in-target --target=/target -- wget -qO- https://dl.google.com/linux/linux_signing_key.pub \
-      | gpg --dearmor -o /target/usr/share/keyrings/google-linux.gpg
-
-    - curtin in-target --target=/target -- bash -c \
-      "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux.gpg] https://dl.google.com/linux/chrome/deb/ stable main' \
-      > /etc/apt/sources.list.d/google-chrome.list"
-
+    - curtin in-target --target=/target -- bash -c 'wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-linux.gpg'
+    - curtin in-target --target=/target -- bash -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux.gpg] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
     - curtin in-target --target=/target -- apt update
     - curtin in-target --target=/target -- apt install -y google-chrome-stable
 
-    
-    # Tailscale
-    - curtin in-target --target=/target -- curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg \
-      -o /target/usr/share/keyrings/tailscale-archive-keyring.gpg
-
-    - curtin in-target --target=/target -- bash -c \
-      "echo 'deb [signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/ubuntu jammy main' \
-      > /etc/apt/sources.list.d/tailscale.list"
-
+    # Tailscale (repo jammy)
+    - curtin in-target --target=/target -- bash -c 'curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg -o /usr/share/keyrings/tailscale-archive-keyring.gpg'
+    - curtin in-target --target=/target -- bash -c 'echo "deb [signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/ubuntu jammy main" > /etc/apt/sources.list.d/tailscale.list'
     - curtin in-target --target=/target -- apt update
     - curtin in-target --target=/target -- apt install -y tailscale
 
-
     # AnyDesk
-    - curtin in-target --target=/target -- wget -qO- https://keys.anydesk.com/repos/DEB-GPG-KEY \
-      | gpg --dearmor -o /target/usr/share/keyrings/anydesk.gpg
-
-    - curtin in-target --target=/target -- bash -c \
-      "echo 'deb [signed-by=/usr/share/keyrings/anydesk.gpg] http://deb.anydesk.com/ all main' \
-      > /etc/apt/sources.list.d/anydesk.list"
-
+    - curtin in-target --target=/target -- bash -c 'wget -qO- https://keys.anydesk.com/repos/DEB-GPG-KEY | gpg --dearmor -o /usr/share/keyrings/anydesk.gpg'
+    - curtin in-target --target=/target -- bash -c 'echo "deb [signed-by=/usr/share/keyrings/anydesk.gpg] http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk.list'
     - curtin in-target --target=/target -- apt update
     - curtin in-target --target=/target -- apt install -y anydesk
-    
-  #late-commands:
-   # ---- INSTALL PACKET TRACER 9 ----
-   # - curtin in-target --target=/target -- mkdir -p /tmp/debs
 
-   #- curtin in-target --target=/target -- wget -O /tmp/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb \
-   #  "https://github.com/CPaulon/ubuntu-autoinstall/releases/download/PacketTracer9/CiscoPacketTracer_900_Ubuntu_64bit.deb"
-
-   # - curtin in-target --target=/target -- dpkg -i /tmp/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb || true
-   # - curtin in-target --target=/target -- apt -f install -y
-
-    
+    # Packet Tracer 9 via GitHub Release (.deb)
+    - curtin in-target --target=/target -- mkdir -p /opt/debs
+    - curtin in-target --target=/target -- wget -O /opt/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb "https://github.com/CPaulon/ubuntu-autoinstall/releases/download/PacketTracer9/CiscoPacketTracer_900_Ubuntu_64bit.deb"
+    - curtin in-target --target=/target -- dpkg -i /opt/debs/CiscoPacketTracer_900_Ubuntu_64bit.deb || true
+    - curtin in-target --target=/target -- apt -f install -y
